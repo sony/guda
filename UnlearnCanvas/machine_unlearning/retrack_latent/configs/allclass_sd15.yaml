@@ -1,0 +1,62 @@
+# All-class learning configuration for SD 1.5
+# Updated to use runwayml/stable-diffusion-v1-5 (standard benchmark)
+
+seed: 42
+
+# Data configuration
+data:
+  root: "data/UnlearnCanvas"
+  styles: "ALL"  # Use all available styles
+  max_samples: null  # null for all samples
+  
+# Caption configuration
+caption:
+  mode: "content_plus_styledesc_no_propernames"  # Qwen-generated prompts
+  rules:
+    forbid_proper_names: ["artist", "style label"]
+    allow_style_descriptions: true  # Brushwork, color, composition, texture, lighting
+    allow_content_descriptions: true
+
+# Model configuration
+model:
+  base: "runwayml/stable-diffusion-v1-5"  # Standard SD1.5 for unlearning research
+  cache_dir: null
+
+# LoRA configuration
+lora:
+  rank: 16
+  alpha: 16
+  target_modules: null  # null for default (attention layers)
+
+# Training configuration
+train:
+  steps: 5000
+  batch_size: 8
+  gradient_accumulation_steps: 1
+  lr: 1.0e-4
+  lr_scheduler: "cosine"
+  warmup_steps: 500
+  mixed_precision: "fp16"
+  gradient_checkpointing: true
+  max_grad_norm: 1.0
+  
+  # Noise scheduler
+  noise_scheduler: "ddpm"
+  prediction_type: "epsilon"  # or "v_prediction"
+  
+  # Time weighting
+  time_weight_mode: "cos2"  # cos2, uniform, snr
+  
+  # Logging
+  log_interval: 100
+  save_interval: 1000
+  validation_interval: 1000
+
+# Output configuration
+out:
+  dir: "outputs/allclass"
+  save_latest_only: false
+
+# Device configuration
+device: "cuda"
+dataloader_num_workers: 4

@@ -1,0 +1,126 @@
+{
+  "experiment_name": "beta_eta_sweep_ffsd_very_relaxed",
+  "description": "Beta and Eta parameter sweep for weighted_style_select anchor strategy. Fixed: lr=2e-6, lambda=2.0, epsilon=0.1",
+  "base_config": {
+    "num_steps": 5000,
+    "batch_size": 4,
+    "save_steps": [1000, 2000, 3000, 4000, 5000],
+    "sample_steps": 500,
+    "seed": 42,
+    "anchor_strategy": "weighted_style_select",
+    "learning_rate": 2e-6,
+    "lambda_stabilize": 2.0,
+    "epsilon": 0.1
+  },
+  "dataset_config": {
+    "prompts_file": "data/UnlearnCanvas/train_prompts_ffsd_very_relaxed.jsonl",
+    "eval_prompts_file": "data/UnlearnCanvas/eval_prompts_ffsd_very_relaxed.jsonl",
+    "data_root": "data",
+    "allclass_checkpoint": "outputs/allclass_sd15_ffsd_very_relaxed/checkpoint-10000",
+    "image_dir": "outputs/evaluation_images_ffsd_very_relaxed",
+    "elbo_cache_file": "cache/allclass_elbo_ffsd_very_relaxed_step10000.pt",
+    "clip_prototypes_file": "cache/clip_style_prototypes_very_relaxed.pt",
+    "descriptors_file": "data/ffsd_very_relaxed_descriptors.json"
+  },
+  "styles": [
+    "Abstractionism",
+    "Artist Sketch",
+    "Blossom Season",
+    "Blue Blooming",
+    "Bricks",
+    "Byzantine",
+    "Cartoon",
+    "Cold Warm",
+    "Color Fantasy",
+    "Comic Etch",
+    "Crayon",
+    "Crypto Punks",
+    "Cubism",
+    "Dadaism",
+    "Dapple",
+    "Defoliation"
+  ],
+  "evaluation_config": {
+    "num_noise_samples": 1,
+    "seed": 42,
+    "batch_size": 8,
+    "min_timestep": 10,
+    "max_timestep": 999,
+    "timestep_stride": 10,
+    "precision": "bf16"
+  },
+  "param_grid": [
+    {
+      "id": "beta2.0_eta0.3",
+      "hash": "be01",
+      "params": {
+        "beta": 2.0,
+        "eta_uniform": 0.3
+      },
+      "description": "Baseline (from previous sweep)"
+    },
+    {
+      "id": "beta3.0_eta0.3",
+      "hash": "be02",
+      "params": {
+        "beta": 3.0,
+        "eta_uniform": 0.3
+      },
+      "description": "Higher temperature, same uniform mixing"
+    },
+    {
+      "id": "beta5.0_eta0.3",
+      "hash": "be03",
+      "params": {
+        "beta": 5.0,
+        "eta_uniform": 0.3
+      },
+      "description": "Much higher temperature, same uniform mixing"
+    },
+    {
+      "id": "beta2.0_eta0.1",
+      "hash": "be04",
+      "params": {
+        "beta": 2.0,
+        "eta_uniform": 0.1
+      },
+      "description": "Same temperature, less uniform mixing (more peaked)"
+    },
+    {
+      "id": "beta3.0_eta0.1",
+      "hash": "be05",
+      "params": {
+        "beta": 3.0,
+        "eta_uniform": 0.1
+      },
+      "description": "Higher temperature, less uniform mixing"
+    },
+    {
+      "id": "beta5.0_eta0.1",
+      "hash": "be06",
+      "params": {
+        "beta": 5.0,
+        "eta_uniform": 0.1
+      },
+      "description": "Much higher temperature, less uniform mixing"
+    },
+    {
+      "id": "beta2.0_eta0.0",
+      "hash": "be07",
+      "params": {
+        "beta": 2.0,
+        "eta_uniform": 0.0
+      },
+      "description": "No uniform mixing (pure CLIP-based)"
+    },
+    {
+      "id": "beta5.0_eta0.0",
+      "hash": "be08",
+      "params": {
+        "beta": 5.0,
+        "eta_uniform": 0.0
+      },
+      "description": "High temperature, no uniform mixing (most peaked)"
+    }
+  ]
+}

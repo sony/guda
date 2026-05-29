@@ -1,0 +1,422 @@
+{
+  "Abstractionism": [
+    "vertical",
+    "energetic composition",
+    "energetic",
+    "dynamic forms",
+    "impasto"
+  ],
+  "Artist Sketch": [
+    "grayscale",
+    "soft shading",
+    "sketchy",
+    "detailed",
+    "sketch-like"
+  ],
+  "Blossom Season": [
+    "vibrant red",
+    "impasto",
+    "painted effect",
+    "impasto texture",
+    "contrasting"
+  ],
+  "Blue Blooming": [
+    "watercolor",
+    "watercolor effect",
+    "light washes",
+    "atmosphere",
+    "atmospheric perspective."
+  ],
+  "Bricks": [
+    "repeating",
+    "abstract design",
+    "repetitive",
+    "symmetrical",
+    "intricate"
+  ],
+  "Byzantine": [
+    "crumpled paper",
+    "subdued",
+    "minimal shading",
+    "impressionism",
+    "monochromatic background"
+  ],
+  "Cartoon": [
+    "sketchy",
+    "overlaid",
+    "bright colors",
+    "overlapping layers",
+    "pastel gradients"
+  ],
+  "Cold Warm": [
+    "watercolor effect",
+    "splattered paint",
+    "digital impressionism",
+    "dynamic brushstrokes",
+    "colorful"
+  ],
+  "Color Fantasy": [
+    "swirls",
+    "wavy lines",
+    "psychedelic",
+    "swirling lines",
+    "chaotic texture"
+  ],
+  "Comic Etch": [
+    "soft pastel",
+    "sketch-like",
+    "brushstroke-heavy",
+    "streaked",
+    "brushstroke"
+  ],
+  "Crayon": [
+    "energetic",
+    "whimsical",
+    "bright colors",
+    "varied",
+    "patchwork"
+  ],
+  "Crypto Punks": [
+    "multicolored",
+    "intersecting lines",
+    "interlocking shapes",
+    "interwoven",
+    "overlapping lines"
+  ],
+  "Cubism": [
+    "geometric patterned background",
+    "cracked",
+    "shadowed",
+    "minimalistic",
+    "minimalist"
+  ],
+  "Dadaism": [
+    "polygonal",
+    "warm",
+    "low-poly",
+    "fluid lines.",
+    "warm tones"
+  ],
+  "Dapple": [
+    "circular motifs",
+    "multicolored dots",
+    "speckled",
+    "multicolored",
+    "dots"
+  ],
+  "Defoliation": [
+    "earthy",
+    "warm tones",
+    "mosaic",
+    "warm",
+    "intricate"
+  ],
+  "Dreamweave": [
+    "fragmented.",
+    "colorful",
+    "mosaic",
+    "multicolored",
+    "mosaic effect"
+  ],
+  "Early Autumn": [
+    "saturated colors",
+    "vibrant green",
+    "fluid motion.",
+    "impasto",
+    "bright colors"
+  ],
+  "Expressionism": [
+    "impasto",
+    "soft pastel",
+    "dreamlike quality",
+    "warm",
+    "saturated colors"
+  ],
+  "Fauvism": [
+    "swirling background",
+    "swirling lines",
+    "moody",
+    "grainy effect",
+    "emotional"
+  ],
+  "Foliage Patchwork": [
+    "warm tones",
+    "warm",
+    "autumnal",
+    "pointillism",
+    "rich color palette"
+  ],
+  "French": [
+    "white background",
+    "rough brushstrokes",
+    "geometric lines",
+    "digital rendering",
+    "simplified"
+  ],
+  "Glowing Sunset": [
+    "warm",
+    "warm tones",
+    "warm orange",
+    "brushy strokes",
+    "brushy"
+  ],
+  "Gorgeous Love": [
+    "digital glitch",
+    "glitch effect",
+    "multicolored",
+    "neon",
+    "glitch art"
+  ],
+  "Greenfield": [
+    "pastel palette",
+    "digital impressionism",
+    "limited",
+    "simplified",
+    "minimal"
+  ],
+  "Impasto": [
+    "vivid color palette",
+    "swirling lines",
+    "impasto",
+    "vivid",
+    "textured impasto"
+  ],
+  "Impressionism": [
+    "watercolor",
+    "minimal contrast",
+    "loose brushstrokes",
+    "low resolution",
+    "delicate"
+  ],
+  "Ink Art": [
+    "shadow play",
+    "black-and-white",
+    "stark contrast",
+    "grayscale",
+    "graphic"
+  ],
+  "Joy": [
+    "metallic",
+    "metallic texture",
+    "intricate",
+    "swirling motifs",
+    "warm tones"
+  ],
+  "Liquid Dreams": [
+    "energetic",
+    "abstraction",
+    "expressive forms",
+    "motion",
+    "flowing lines"
+  ],
+  "Magic Cube": [
+    "graffiti",
+    "psychedelic",
+    "pop art",
+    "intricate",
+    "glowing"
+  ],
+  "Meta Physics": [
+    "colors",
+    "cool",
+    "surrealism",
+    "glitch effect",
+    "dreamlike quality"
+  ],
+  "Meteor Shower": [
+    "vertical",
+    "digital glitch",
+    "futuristic",
+    "dripping",
+    "neon colors"
+  ],
+  "Monet": [
+    "mosaic effect",
+    "digital glitch",
+    "multicolored",
+    "multi-colored",
+    "colorful"
+  ],
+  "Mosaic": [
+    "mosaic",
+    "mosaic-style",
+    "varied brushstrokes",
+    "mosaic textures",
+    "intricate"
+  ],
+  "Neon Lines": [
+    "neon colors",
+    "wavy lines",
+    "neon",
+    "swirling lines",
+    "swirls"
+  ],
+  "On Fire": [
+    "fiery",
+    "surreal composition.",
+    "energetic",
+    "swirling lines",
+    "asymmetrical"
+  ],
+  "Palette Knife": [
+    "high contrast.",
+    "monochromatic background",
+    "textured canvas",
+    "digital collage",
+    "organic"
+  ],
+  "Pastel": [
+    "floral",
+    "dreamy atmosphere",
+    "loose",
+    "impressionist",
+    "soft brushstrokes"
+  ],
+  "Pencil Drawing": [
+    "linear patterns",
+    "sketch-like",
+    "dynamic composition.",
+    "layered composition",
+    "intricate"
+  ],
+  "Picasso": [
+    "earthy",
+    "warm tones",
+    "warm",
+    "sepia-toned",
+    "sepia tones"
+  ],
+  "Pointillism": [
+    "pointillism",
+    "small dot",
+    "mosaic",
+    "warm tones",
+    "warm"
+  ],
+  "Pop Art": [
+    "dynamic shapes",
+    "layered effects",
+    "contrasting",
+    "surrealistic",
+    "rich"
+  ],
+  "Rainwash": [
+    "reflective surface",
+    "reflective",
+    "wet glass effect",
+    "moody",
+    "water droplets"
+  ],
+  "Realistic Watercolor": [
+    "grainy filter",
+    "filtered",
+    "low contrast",
+    "subdued tones",
+    "grainy appearance"
+  ],
+  "Red Blue Ink": [
+    "splattered paint",
+    "drips",
+    "splattered",
+    "vibrant red",
+    "dripped paint"
+  ],
+  "Rust": [
+    "earthy",
+    "soft pastel",
+    "natural light",
+    "subtle shading",
+    "loose composition"
+  ],
+  "Sketch": [
+    "grayscale",
+    "detailed",
+    "dynamic shading",
+    "detailed linework",
+    "intricate"
+  ],
+  "Sponge Dabbed": [
+    "fragmented perspective",
+    "mosaic",
+    "colorful",
+    "low-resolution",
+    "pointillism"
+  ],
+  "Structuralism": [
+    "flat",
+    "pop art",
+    "simplified",
+    "graffiti",
+    "bold outlines"
+  ],
+  "Superstring": [
+    "swirling lines",
+    "wavy lines",
+    "wavy",
+    "dynamic motion.",
+    "dreamlike quality"
+  ],
+  "Surrealism": [
+    "painted effect",
+    "painted",
+    "digital filter",
+    "dreamy atmosphere",
+    "moody atmosphere"
+  ],
+  "Techno": [
+    "circuit board",
+    "digital glitch",
+    "digital noise",
+    "green and orange",
+    "neon"
+  ],
+  "Ukiyoe": [
+    "blue and white",
+    "blue and white tones",
+    "monochromatic",
+    "wave-like patterns",
+    "dotted"
+  ],
+  "Van Gogh": [
+    "blue and yellow",
+    "blue-yellow palette",
+    "impasto",
+    "thick",
+    "vibrant blues and yellows"
+  ],
+  "Vibrant Flow": [
+    "iridescent",
+    "vibrant blue",
+    "neon colors",
+    "dynamic shapes",
+    "neon"
+  ],
+  "Warm Love": [
+    "polygonal",
+    "resolution",
+    "low-resolution",
+    "low poly",
+    "warm"
+  ],
+  "Warm Smear": [
+    "warm",
+    "impasto",
+    "fluid motion.",
+    "dynamic brushstrokes",
+    "lively"
+  ],
+  "Watercolor": [
+    "desaturated colors",
+    "subtle",
+    "soft focus.",
+    "atmosphere",
+    "shadowed"
+  ],
+  "Winter": [
+    "distressed",
+    "distressed look",
+    "grainy noise",
+    "grunge",
+    "distressed appearance"
+  ]
+}

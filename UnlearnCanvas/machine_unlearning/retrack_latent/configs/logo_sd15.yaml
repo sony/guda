@@ -1,0 +1,12 @@
+# LOGO learning configuration for SD 1.5
+# Inherits from allclass_sd15.yaml
+
+inherit: "allclass_sd15.yaml"
+
+# Data configuration - override to exclude forget_style
+data:
+  forget_style: null  # Set via CLI
+
+# Output configuration
+out:
+  dir: "outputs/logo"

@@ -1,0 +1,143 @@
+{
+  "experiment_name": "weighted_select_param_sweep_ffsd_very_relaxed",
+  "description": "Parameter sweep for weighted_style_select anchor strategy with FFSD Very Relaxed dataset. Beta=2.0, Eta=0.3 fixed.",
+  "base_config": {
+    "num_steps": 5000,
+    "batch_size": 4,
+    "save_steps": [1000, 2000, 3000, 4000, 5000],
+    "sample_steps": 500,
+    "seed": 42,
+    "anchor_strategy": "weighted_style_select",
+    "beta": 2.0,
+    "eta_uniform": 0.3
+  },
+  "param_grid": [
+    {
+      "id": "ws_lr1e6_lam2_eps0.1",
+      "hash": "ws01",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1
+      },
+      "description": "Baseline configuration (current default)"
+    },
+    {
+      "id": "ws_lr5e7_lam2_eps0.1",
+      "hash": "ws02",
+      "params": {
+        "learning_rate": 5e-7,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1
+      },
+      "description": "Lower learning rate"
+    },
+    {
+      "id": "ws_lr2e6_lam2_eps0.1",
+      "hash": "ws03",
+      "params": {
+        "learning_rate": 2e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1
+      },
+      "description": "Higher learning rate"
+    },
+    {
+      "id": "ws_lr1e6_lam1_eps0.1",
+      "hash": "ws04",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 1.0,
+        "epsilon": 0.1
+      },
+      "description": "Lower lambda (less preservation)"
+    },
+    {
+      "id": "ws_lr1e6_lam3_eps0.1",
+      "hash": "ws05",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 3.0,
+        "epsilon": 0.1
+      },
+      "description": "Higher lambda (more preservation)"
+    },
+    {
+      "id": "ws_lr1e6_lam2_eps0.05",
+      "hash": "ws06",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.05
+      },
+      "description": "Smaller epsilon (tighter redirect)"
+    },
+    {
+      "id": "ws_lr1e6_lam2_eps0.2",
+      "hash": "ws07",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.2
+      },
+      "description": "Larger epsilon (looser redirect)"
+    },
+    {
+      "id": "ws_lr5e7_lam3_eps0.05",
+      "hash": "ws08",
+      "params": {
+        "learning_rate": 5e-7,
+        "lambda_stabilize": 3.0,
+        "epsilon": 0.05
+      },
+      "description": "Conservative configuration (low LR, high lambda, tight epsilon)"
+    },
+    {
+      "id": "ws_lr2e6_lam1_eps0.2",
+      "hash": "ws09",
+      "params": {
+        "learning_rate": 2e-6,
+        "lambda_stabilize": 1.0,
+        "epsilon": 0.2
+      },
+      "description": "Aggressive configuration (high LR, low lambda, loose epsilon)"
+    }
+  ],
+  "dataset_config": {
+    "prompts_file": "data/UnlearnCanvas/train_prompts_ffsd_very_relaxed.jsonl",
+    "eval_prompts_file": "data/UnlearnCanvas/eval_prompts_ffsd_very_relaxed.jsonl",
+    "data_root": "data",
+    "allclass_checkpoint": "outputs/allclass_sd15_ffsd_very_relaxed/checkpoint-10000",
+    "image_dir": "outputs/evaluation_images_ffsd_very_relaxed",
+    "elbo_cache_file": "cache/allclass_elbo_ffsd_very_relaxed_step10000.pt",
+    "clip_prototypes_file": "cache/clip_style_prototypes_very_relaxed.pt",
+    "descriptors_file": "data/ffsd_very_relaxed_descriptors.json"
+  },
+  "styles": [
+    "Abstractionism",
+    "Artist Sketch",
+    "Blossom Season",
+    "Blue Blooming",
+    "Bricks",
+    "Byzantine",
+    "Cartoon",
+    "Cold Warm",
+    "Color Fantasy",
+    "Comic Etch",
+    "Crayon",
+    "Crypto Punks",
+    "Cubism",
+    "Dadaism",
+    "Dapple",
+    "Defoliation"
+  ],
+  "evaluation_config": {
+    "num_noise_samples": 1,
+    "seed": 42,
+    "batch_size": 8,
+    "min_timestep": 10,
+    "max_timestep": 999,
+    "timestep_stride": 10,
+    "precision": "bf16"
+  }
+}

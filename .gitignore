@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+.env/
+*.egg-info/
+
+# Local data and generated artifacts
+data/cifar-10-batches-py/
+data/cifar-100-python/
+checkpoints/
+outputs/
+results/
+cache/
+wandb/
+logs/
+slurm_logs/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.npz
+*.pkl
+*.parquet
+
+# Generated media
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.zip
+*.pdf
+ref/
+
+# Keep README figure.
+!figures/
+!figures/overview_guda.png
+
+# Keep source-controlled prompt/data metadata.
+!UnlearnCanvas/data/*.json
+!UnlearnCanvas/data/*.jsonl
+!UnlearnCanvas/data/ffsd_descriptors/*.json

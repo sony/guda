@@ -1,0 +1,139 @@
+{
+  "experiment_name": "retrack_param_sweep_ffsd_very_relaxed",
+  "description": "Parameter sweep for ReTrack unlearning with FFSD Very Relaxed dataset",
+  "base_config": {
+    "num_steps": 5000,
+    "batch_size": 4,
+    "save_steps": [1000, 2000, 3000, 4000, 5000],
+    "sample_steps": 500,
+    "seed": 42,
+    "anchor_strategy": "style_removed"
+  },
+  "param_grid": [
+    {
+      "id": "lr1e6_lam2_eps0.1",
+      "hash": "a1b2c3d4",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1
+      },
+      "description": "Baseline configuration (current default)"
+    },
+    {
+      "id": "lr5e7_lam2_eps0.1",
+      "hash": "e5f6g7h8",
+      "params": {
+        "learning_rate": 5e-7,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1
+      },
+      "description": "Lower learning rate"
+    },
+    {
+      "id": "lr2e6_lam2_eps0.1",
+      "hash": "i9j0k1l2",
+      "params": {
+        "learning_rate": 2e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1
+      },
+      "description": "Higher learning rate"
+    },
+    {
+      "id": "lr1e6_lam1_eps0.1",
+      "hash": "m3n4o5p6",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 1.0,
+        "epsilon": 0.1
+      },
+      "description": "Lower lambda (less preservation)"
+    },
+    {
+      "id": "lr1e6_lam3_eps0.1",
+      "hash": "q7r8s9t0",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 3.0,
+        "epsilon": 0.1
+      },
+      "description": "Higher lambda (more preservation)"
+    },
+    {
+      "id": "lr1e6_lam2_eps0.05",
+      "hash": "u1v2w3x4",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.05
+      },
+      "description": "Smaller epsilon (tighter redirect)"
+    },
+    {
+      "id": "lr1e6_lam2_eps0.2",
+      "hash": "y5z6a7b8",
+      "params": {
+        "learning_rate": 1e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.2
+      },
+      "description": "Larger epsilon (looser redirect)"
+    },
+    {
+      "id": "lr5e7_lam3_eps0.05",
+      "hash": "c9d0e1f2",
+      "params": {
+        "learning_rate": 5e-7,
+        "lambda_stabilize": 3.0,
+        "epsilon": 0.05
+      },
+      "description": "Conservative configuration (low LR, high lambda, tight epsilon)"
+    },
+    {
+      "id": "lr2e6_lam1_eps0.2",
+      "hash": "g3h4i5j6",
+      "params": {
+        "learning_rate": 2e-6,
+        "lambda_stabilize": 1.0,
+        "epsilon": 0.2
+      },
+      "description": "Aggressive configuration (high LR, low lambda, loose epsilon)"
+    }
+  ],
+  "dataset_config": {
+    "prompts_file": "data/UnlearnCanvas/train_prompts_ffsd_very_relaxed.jsonl",
+    "eval_prompts_file": "data/UnlearnCanvas/eval_prompts_ffsd_very_relaxed.jsonl",
+    "data_root": "data",
+    "allclass_checkpoint": "outputs/allclass_sd15_ffsd_very_relaxed/checkpoint-10000",
+    "image_dir": "outputs/evaluation_images_ffsd_very_relaxed",
+    "elbo_cache_file": "cache/allclass_elbo_ffsd_very_relaxed_step10000.pt"
+  },
+  "styles": [
+    "Abstractionism",
+    "Artist Sketch",
+    "Blossom Season",
+    "Blue Blooming",
+    "Bricks",
+    "Byzantine",
+    "Cartoon",
+    "Cold Warm",
+    "Color Fantasy",
+    "Comic Etch",
+    "Crayon",
+    "Crypto Punks",
+    "Cubism",
+    "Dadaism",
+    "Dapple",
+    "Defoliation"
+  ],
+  "evaluation_config": {
+    "num_noise_samples": 1,
+    "seed": 42,
+    "batch_size": 8,
+    "min_timestep": 10,
+    "max_timestep": 999,
+    "timestep_stride": 10,
+    "precision": "bf16"
+  }
+}

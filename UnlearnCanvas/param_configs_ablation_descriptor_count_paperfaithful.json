@@ -1,0 +1,81 @@
+{
+  "experiment_name": "ablation_descriptor_count_ffsd_very_relaxed_paperfaithful",
+  "description": "AWSS descriptor-count ablation with legacy paper-faithful execution: 5000-step runs with UNA evaluated at 1000/2000/3000/4000/5000.",
+  "base_config": {
+    "num_steps": 5000,
+    "una_eval_steps": [1000, 2000, 3000, 4000, 5000],
+    "batch_size": 4,
+    "sample_steps": 500,
+    "seed": 42,
+    "anchor_strategy": "weighted_style_select",
+    "beta": 2.0,
+    "eta_uniform": 0.3,
+    "style_sampling_mode": "weighted"
+  },
+  "param_grid": [
+    {
+      "id": "desc1",
+      "hash": "pfdesc01",
+      "params": {
+        "learning_rate": 2e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1,
+        "num_anchor_descriptors": 1
+      },
+      "description": "Single descriptor anchor prompt"
+    },
+    {
+      "id": "desc3",
+      "hash": "pfdesc02",
+      "params": {
+        "learning_rate": 2e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1,
+        "num_anchor_descriptors": 3
+      },
+      "description": "Paper-faithful descriptor count"
+    },
+    {
+      "id": "desc5",
+      "hash": "pfdesc03",
+      "params": {
+        "learning_rate": 2e-6,
+        "lambda_stabilize": 2.0,
+        "epsilon": 0.1,
+        "num_anchor_descriptors": 5
+      },
+      "description": "Dense descriptor anchor prompt"
+    }
+  ],
+  "dataset_config": {
+    "prompts_file": "data/UnlearnCanvas/train_prompts_ffsd_very_relaxed.jsonl",
+    "eval_prompts_file": "data/UnlearnCanvas/eval_prompts_ffsd_very_relaxed.jsonl",
+    "data_root": "data",
+    "allclass_checkpoint": "outputs/allclass_sd15_ffsd_very_relaxed/checkpoint-10000",
+    "image_dir": "outputs/evaluation_images_ffsd_very_relaxed",
+    "elbo_cache_file": "cache/allclass_elbo_ffsd_very_relaxed_step10000.pt",
+    "clip_prototypes_file": "cache/clip_style_prototypes_very_relaxed.pt",
+    "descriptors_file": "data/ffsd_very_relaxed_descriptors.json"
+  },
+  "styles": [
+    "Abstractionism",
+    "Artist Sketch",
+    "Blossom Season",
+    "Blue Blooming",
+    "Bricks",
+    "Byzantine",
+    "Cartoon",
+    "Cold Warm",
+    "Color Fantasy",
+    "Comic Etch",
+    "Crayon",
+    "Crypto Punks",
+    "Cubism",
+    "Dadaism",
+    "Dapple",
+    "Defoliation"
+  ],
+  "evaluation_config": {
+    "batch_size": 8
+  }
+}

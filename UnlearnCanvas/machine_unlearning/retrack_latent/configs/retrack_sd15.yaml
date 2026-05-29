@@ -1,0 +1,26 @@
+# ReTrack unlearning configuration for SD 1.5
+# Inherits from allclass_sd15.yaml
+
+inherit: "allclass_sd15.yaml"
+
+# Teacher model (All-class LoRA)
+all_class_lora: "outputs/allclass/lora.safetensors"
+
+# Data configuration
+data:
+  forget_style: null  # Set via CLI
+  index_path: "data/uc_index.json"
+  redirect_styles: null  # null for all except forget_style
+  same_noise: true  # Use same noise for paired samples
+
+# Unlearning-specific training
+train:
+  lambda_stab: 0.2  # Stability loss coefficient
+  k_redirect: 1  # Number of redirect neighbors (1 for MVP)
+  
+  # Override steps if needed for calibration
+  steps: 5000
+
+# Output configuration
+out:
+  dir: "outputs/unlearn"
